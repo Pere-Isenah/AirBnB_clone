@@ -65,7 +65,36 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         elif args[0] not in self.__classes:
             print("** class doesn't exist **")
+        else:
+            self.new_inst = BaseModel()
+            self.new_inst_json = self.new_inst.to_dict()
+            print(self.new_inst_json.get("id"))
 
+    def do_show(self,arg):
+        args = arg.split()
+        if len(args) == 0:
+            print("** class name missing **")
+        elif args[0] not in self.__classes:
+            print("** class doesn't exist **")
+        elif len(args) == 1:
+            print("** instance id missing **")
+        elif args[1] != self.new_inst_json.get("id"):
+            print("** no instance found **")
+        else:
+            print(self.new_inst)
+    
+    def do_destroy(self,arg):
+        args = arg.split()
+        if len(args) == 0:
+            print("** class name missing **")
+        elif args[0] not in self.__classes:
+            print("** class doesn't exist **")
+        elif len(args) == 1:
+            print("** instance id missing **")
+        elif args[1] != self.new_inst_json.get("id"):
+            print("** no instance found **")
+        else:
+            print(self.new_inst)
 
 if __name__ == '__main__':
     """
