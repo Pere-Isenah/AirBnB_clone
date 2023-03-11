@@ -42,12 +42,6 @@ class HBNBCommand(cmd.Cmd):
         """
         return True
 
-    def help_quit(self):
-        """
-        Display help text for the quit command.
-        """
-        print("Quit command to exit the program")
-
     def do_EOF(self, arg):
         """
         EOF command to exit the program.
@@ -59,12 +53,6 @@ class HBNBCommand(cmd.Cmd):
         - True to signal the command loop to exit.
         """
         return True
-
-    def help_EOF(self):
-        """
-        Display help text for the EOF command.
-        """
-        print("EOF command to exit the program")
 
     def emptyline(self):
         """Handles empty lines"""
