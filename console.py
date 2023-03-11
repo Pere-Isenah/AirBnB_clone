@@ -187,9 +187,9 @@ class HBNBCommand(cmd.Cmd):
 
             if hasattr(obj, attr_name):
                 type_ = type(getattr(obj, attr_name))
-            if type_ in [str, float, int]:
-                attr_value = type_(attr_value)
-                setattr(obj, attr_name, attr_value)
+                if type_ in [str, float, int]:
+                    attr_value = type_(attr_value)
+                    setattr(obj, attr_name, attr_value)
             else:
                 setattr(obj, attr_name, attr_value)
                 storage.save()
