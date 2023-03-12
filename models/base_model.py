@@ -19,11 +19,11 @@ class BaseModel():
         if len(kwargs) != 0:
             for key, value in kwargs.items():
                 if key == "__class__":
-                    continue;
+                    continue
                 elif key == "updated_at" or key == "created_at":
-                    self.__dict__[key] = datetime.fromisoformat(value);
+                    self.__dict__[key] = datetime.fromisoformat(value)
                 else:
-                    self.__dict__[key] = value;
+                    self.__dict__[key] = value
         else:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
@@ -51,6 +51,3 @@ class BaseModel():
         dict_copy["created_at"] = self.created_at.isoformat()
         dict_copy["updated_at"] = self.updated_at.isoformat()
         return dict_copy
-
-
-    
