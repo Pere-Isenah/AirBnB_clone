@@ -1,15 +1,9 @@
 footer{
     height: 60px;
     width: 100%;
-    position: absolute;
+    position: static; 
     bottom: 0;
     border-top: 1px solid #CCCCCC;
+    text-align: center;
     
-}
-div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-
 }
